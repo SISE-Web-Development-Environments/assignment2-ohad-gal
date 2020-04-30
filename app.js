@@ -28,7 +28,7 @@ var second_color_chosen;
 var third_color_chosen;
 var time_chosen;
 var settingsDone = false;
-var music = new Audio("Intro.mp3");
+var music = new Audio("etc/Intro.mp3");
 
 var lifes = 5;
 var lifes_ctr;
