@@ -1,250 +1,407 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-		<script src="./jquery-3.4.1.slim.min.js"></script>
-		<script type="text/javascript" src="./app.js"></script>
-	</head>
-	<body >
-	
-	<div id="WelcomeSection">
-		<div id="start_buttons" >
-			<button class="Buttons" id="registerButton"> Register </button>
-			<button class="Buttons" id="loginButton" onclick="showLoginSection()"> Login </button>
-			<button class="Buttons" id="goBack" onclick="goBack()" Style="visibility :hidden;">Go Back</button>
-		</div>
-	</div>
 
-	<div id="RegisterSection"  >
-		<form id="registration_form">
-			<div>
-				<input type="text" id="form_username" name="" required="">
-				<span class="error_form" id="username_error_message"></span>
-				<label>
-					User Name
-				</label>	
-			</div>
-			<div>
-				<input type="text" id="form_fullname" name="" required="">
-				<span class="error_form" id="fullname_error_message"></span>
-				<label>
-					Full Name
-				</label>	
-			</div>
-			<div>
-				<input type="password" id="form_password" name="" required="">
-				<span class="error_form" id="password_error_message"></span>
-				<label>Password</label>	
-			</div>
-			<div>
-				<input type="password" id="form_retype_password" name="" required="">
-				<span class="error_form" id="retype_password_error_message"></span>
-				<label>Re-Enter Password</label>	
-         </div>
-         <div>
-				<input type="email" id="form_email" name="" required="">
-				<span class="error_form" id="email_error_message"></span>
-				<label>Email</label>	
-         </div>
-         <label>Birthday</label>	
-         <div>
-				<input type="date" id="form_birth_date" name="trip-start" required="">
-				<span class="error_form" id="birth_date_error_message"></span>
-			</div>
-			<input type="submit" value="Submit!" name="">
-		</form>
-	</div>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" type="text/css" href="./css/main_style.css">
+   <link rel="stylesheet" type="text/css" href="./css/header_style.css">
+   <link rel="stylesheet" type="text/css" href="./css/menu_style.css">
+   <link rel="stylesheet" type="text/css" href="./css/forms_style.css">
+   <link rel="stylesheet" type="text/css" href="./css/footer_style.css">
+   <link rel="stylesheet" type="text/css" href="./css/game_style.css">
 
-   <div id="LoginSection" Style="visibility :hidden;">
-      <form id="login_form">
-         <div>
-				<input type="text" id="login_form_username" name="" required="">
-				<span class="error_form" id="username_error_message"></span>
-				<label>
-					User Name
-				</label>	
-			</div>
-         <div>
-				<input type="password" id="login_form_password" name="" required="">
-				<span class="error_form" id="password_error_message"></span>
-				<label>Password</label>	
-			</div>
-			<input type="submit" value="Log-in" name="">
-		</form>
+
+   <!-- jQuery plugins ) -->
+   <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+   <script src="./jquery-3.4.1.slim.min.js"></script>
+
+
+  
+
+
+   <!-- registration scripts ) -->
+   <script src="./reg_login_scripts.js"></script>
+
+   <!-- game scripts ) -->
+   <script type="text/javascript" src="./app.js"></script>
+
+   <!-- Bootstrap core CSS -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <!-- Material Design Bootstrap -->
+   <link rel="stylesheet" href="css/mdb.min.css">
+
+    <!-- Modal box plugin ) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+ 
+</head>
+
+<body>
+
+   <div class="header">
+      <div class="bar">
+         <div id="header-left">
+            <div id="logoPictureFooter">
+               <img id="emblem" src="logo3.png">
+            </div>
+         </div>
+         <div class="header-right" style="margin-left: 50px;">
+            <p style="color: whitesmoke;">Ohad Nave 307896837 Gal Atedgi 204332795</p>
+         </div>
+      </div>
+      <div class="welcome_logo_pic">
+         <div id="welcomeLogoPicture">
+            <img src="welcome3.png">
+         </div>
+      </div>
    </div>
 
-		<button id="gameButton" Style="visibility :hidden;" >show game board</button>
-	
+   <div class="menu">
+      <div id="WelcomeSection">
+         <div id="start_buttons">
+            <a class="Buttons" id="home_button" onclick="showWelcomePage()" style="display: none;">Home</a>
+            <a class="Buttons" id="registerButton" onclick="showRegisterSection()"> Register</a>
+            <a class="Buttons" id="loginButton" onclick="showLoginSection()"> Login </a>
+            <!-- <a class="Buttons" id="gameButton" onclick="showGameGrid()" style="display: none;">show</a> -->
+            <a class="Buttons" id="newGameButton" onclick="renewGame()" style="display: none;">new game</a>
+            <a class="Buttons" id="about_button" href="#modalBox2" rel="modal:open" style="display: none;">About</a>
+            <a class="Buttons" onclick="showGameSettings()" style="display: none;" >Game Settings</a>
+            <div id="modalBox2" class="modal">
+               <p>Web page developers:</p>
+               <p> Ohad Nave 307896837</p>
+               <p> Gal Atedgi 204332795 </p>
+               <br>
+               <p> We used this jQuery Modal plugin in order to pop-up box: </p>
+               <a href="https://cdnjs.com/libraries/jquery-modal"> Link </a>
+               <br>
+               <br>
+               <p> Difficulties: </p>
+               <p> We struggled to debug java script and jQuery scripts </p>
+
+               <br>
+               <a id="closeButton" href="#" rel="modal:close">Close this window</a>
+            </div>
 
 
 
-	<div id="gameSection" >
-		<div id="score">
-			<label for="lblScore">SCORE:</label>
-			<input id="lblScore" type="text" />
-		</div>
-		<div id="time">
-			<label for="lblTime">TIME:</label>
-			<input id="lblTime" type="text" />
-		</div>
-		<div id="game">
-			<canvas id="canvas" height="600" width="600"></canvas>
-		</div>
-	</div>
+         </div>
+      </div>
 
-		<script>
-            $(document).ready(function(){
-				$("#RegisterSection").hide();
-				$("#gameSection").hide();
-				$('body').css('background-image', 'url("W1.png")');});
-		
-				$("#registerButton").click(function(){
-				$("#RegisterSection").show();
-				$("#goBack").css('visibility', 'visible');
-				$("#registerButton").hide();
-            $('body').css('background-image', 'url("clean_back.png")');});
+      <div class="content">
+         <div id="RegisterSection" style="display:none;">
+            <form id="registration_form">
+               <div>
+                  <input type="text" id="form_username" name="" required="">
+                  <span class="error_form" id="username_error_message"></span>
+                  <label>
+                     User Name
+                  </label>
+               </div>
+               <div>
+                  <input type="text" id="form_fullname" name="" required="">
+                  <span class="error_form" id="fullname_error_message"></span>
+                  <label>
+                     Full Name
+                  </label>
+               </div>
+               <div>
+                  <input type="password" id="form_password" name="" required="">
+                  <span class="error_form" id="password_error_message"></span>
+                  <label>Password</label>
+               </div>
+               <div>
+                  <input type="password" id="form_retype_password" name="" required="">
+                  <span class="error_form" id="retype_password_error_message"></span>
+                  <label>Re-Enter Password</label>
+               </div>
+               <div>
+                  <input type="email" id="form_email" name="" required="">
+                  <span class="error_form" id="email_error_message"></span>
+                  <label>Email</label>
+               </div>
+               <div>
+                  <input id="form_birth_date" placeholder="Birthday Date" name="" type="text"
+                     onfocus="(this.type='date')" required="">
+                  <span class="error_form" id="birth_date_error_message"></span>
+               </div>
+               <input type="submit" value="Submit!" name="">
+            </form>
+         </div>
 
-			   $("#gameButton").click(function(){
-				$("#gameSection").show();
-				$('body').css('background-image', 'url("orange.jpg")');});
+         <div id="LoginSection" style="display:none;">
+            <form id="login_form">
+               <div>
+                  <input type="text" id="login_form_username" name="" required="">
+                  <span class="error_form" id="username_error_message"></span>
+                  <label>
+                     User Name
+                  </label>
+               </div>
+               <div>
+                  <input type="password" id="login_form_password" name="" required="">
+                  <span class="error_form" id="password_error_message"></span>
+                  <label>Password</label>
+               </div>
+               <input type="submit" value="Log-in" name="">
+            </form>
+         </div>
 
-			function goBack() {
-			$("#RegisterSection").hide();
-         $("#LoginSection").hide();
-			$('body').css('background-image', 'url("W1.png")');}
+         <div id="GameSection">
+            <div id="gameDetails" style="display: none;">
+               <form id="game_details_form">
+                  <h1>Game Stats</h1>
+                  <div id="user_name">
+                     <label for="lblUserName">User name</label>
+                     <input id="user_input" type="text" />
+                  </div>
+                  <div id="score">
+                     <label for="lblScore">Score</label>
+                     <input id="lblScore" type="text" />
 
-         function showLoginSection() {
-         $("#RegisterSection").hide();
-			$("#LoginSection").css('visibility', 'visible');
-			$('body').css('background-image', 'url("clean_back.png")');}
+                  </div>
+                  <div id="time">
+                     <label for="lblTime">Timer</label>
+                     <input id="lblTime" type="text" />
+                  </div>
+                  <div id="Lifes">
+                     <label for="lblLife">Lifes</label>
+                     <input id="lblLife" type="text" />
+                  </div>
+               </form>
+            </div>
+            <div id="gameSettings" style="display: none;">
+               <form id="game_settings_form">
+                  <div id="game_moving_keys">
+                     <h1> Game Settings </h1>
+                     <span>
+                        <img class="arrow_pics" src="up.png">
+                        <input type="text" id="choose4Up" maxlength="1"
+                           onkeydown="user_up_ouput.value = event.keyCode;" />
+                        <output id="user_up_ouput">38</output>
+                     </span>
+                     <div>
+                        <img class="arrow_pics" src="down.png">
+                        <input type="text" id="choose4Down" maxlength="1"
+                           onkeydown="user_down_ouput.value = event.keyCode;" />
+                        <output id="user_down_ouput">40</output>
+                     </div>
+                     <div>
+                        <img class="arrow_pics" src="left.png">
+                        <input type="text" id="choose4Left" maxlength="1"
+                           onkeydown="user_left_ouput.value = event.keyCode;" />
+                        <output id="user_left_ouput">37</output>
+                     </div>
+                     <div>
+                        <img class="arrow_pics" src="right.png">
+                        <input type="text" id="choose4Right" maxlength="1"
+                           onkeydown="user_right_ouput.value = event.keyCode;" />
+                        <output id="user_right_ouput">39</output>
+                     </div>
+                  </div>
 
- $(function() {
+                  <div class="balls_num_settings">
+                     <label class="lblBallNum" for="name" style="display: inline-block;">Balls number</label>
+                     <input type="range" id="ballsNumber" name="name" min="50" max="90"
+                        oninput="ballsNumber_output.value = ballsNumber.value" />
+                     <output id="ballsNumber_output">50</output>
+                  </div>
 
-         $("#username_error_message").hide();
-         $("#fullname_error_message").hide();
-         $("#password_error_message").hide();
-         $("#retype_password_error_message").hide();
-         $("#email_error_message").hide();
 
-         var error_fname = false;
-         var error_sname = false;
-         var error_password = false;
-         var error_retype_password = false;
-         var error_email = false;
+                  <div id="balls_color_settings">
+                     <div>
+                        <label>5 point balls</label>
+                        <input type="color" id="point5_color" name="favcolor" value="#ff0000" />
+                        <br>
+                        <label style="display: inline-block;">15 point balls</label>
+                        <input type="color" id="point15_color" name="favcolor" value="#8A2BE2" />
+                        <br>
+                        <label style="display: inline-block;">25 point balls</label>
+                        <input type="color" id="point25_color" name="favcolor" value="#00ff00" />
+                        <br>
+                     </div>
+                  </div>
 
-         $("#form_username").focusout(function(){ 
-            check_username();
-         });
-         $("#form_fullname").focusout(function() {
-            check_fullname();
-         });
-         $("#form_password").focusout(function() {
-            check_password();
-         });
-         $("#form_retype_password").focusout(function() {
-            check_retype_password();
-         });
-         $("#form_email").focusout(function() {
-            check_email();
-         });
+                  <br>
+                  <br>
+                  <div class="game_time_settings">
+                     <label class="lvlTimeChoose" for="name" style="display: inline-block;">game time(sec)</label>
+                     <input type="range" id="game_time" name="name" min=60 max=180
+                        oninput="game_time_output.value = game_time.value" />
+                     <output id="game_time_output">60</output>
+                  </div>
 
-         function check_username() {
-            var username = $("#form_username").val();
-            var username_length = $("#form_username").val().length;
-            if ( username_length > 3 && username !== '') {
-               $("#username_error_message").hide();
-               $("#form_username").css("border-bottom","2px solid #34F458");
-            } else {
-               $("#username_error_message").html("Should contain at least 4 letters");
-               $("#username_error_message").show();
-               $("#form_username").css("border-bottom","2px solid #F90A0A");
-               error_fname = true;
-            }
-         }
+                  <div class="monster_num_settings">
+                     <label class="lblMonNum" for="name" style="display: inline-block;">Monster number</label>
+                     <input type="range" id="monsterNumber" name="name" min="1" max="4"
+                        oninput="monster_number_output.value = monsterNumber.value" />
+                     <output id="monster_number_output">4</output>
+                  </div>
 
-         function check_fullname() {
-            var pattern = /^[a-zA-Z]*$/; //only letters regex.
-            var sname = $("#form_fullname").val()
-            if (pattern.test(sname) && sname !== '') {
-               $("#fullname_error_message").hide();
-               $("#form_fullname").css("border-bottom","2px solid #34F458");
-            } else {
-               $("#fullname_error_message").html("Should contain only Characters");
-               $("#fullname_error_message").show();
-               $("#form_fullname").css("border-bottom","2px solid #F90A0A");
-               error_fname = true;
-            }
-         }
+                  <input type="submit" onclick="showGameGrid()" value="Save&Start" name="">
+                  <input type="submit" value="Set Random" onclick="setRandomSettings()">
+               </form>
+            </div>
+            <div id="gameGrid" style="display: none;">
+               <div id="game">
+                  <canvas id="canvas" height="600" width="600"></canvas>
+               </div>
+            </div>
+         </div>
 
-         function check_password() {
-            var password_length = $("#form_password").val().length;
-            if (password_length < 6) {
-               $("#password_error_message").html("Atleast 6 Characters");
-               $("#password_error_message").show();
-               $("#form_password").css("border-bottom","2px solid #F90A0A");
-               error_password = true;
-            } else {
-               $("#password_error_message").hide();
-               $("#form_password").css("border-bottom","2px solid #34F458");
-            }
-         }
+         <!-- <div class="footer">
+         <div class="footer-content">
+            <div id="aboutSite">
+               <h3>About</h3>
+               <p>Web platform mini-game for the classic old game "Pacman" for all ages.</p>
+               <p>The site was designed and built by Ohad Nave & Gal Atedgi.</p>
+               <h3>Contact Us</h3>
+            </div>
+            <div class="foot-sction links"></div>
+            <div class="foot-sction contact">
+               <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+                  integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+                  crossorigin="anonymous">
+               <script src="https://code.jquery.com/jquery-3.3.1.js"
+                  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+                  </script>
+               <ul>
+                  <li> <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=ohadnav@post.bgu.ac.il"><i class="fab fa-google icon"></i></a></li>
+               </ul>
+            </div>
+         </div>
+      </div> -->
 
-         function check_retype_password() {
-            var password = $("#form_password").val();
-            var retype_password = $("#form_retype_password").val();
-            if (password !== retype_password) {
-               $("#retype_password_error_message").html("Passwords Did not Matched");
-               $("#retype_password_error_message").show();
-               $("#form_retype_password").css("border-bottom","2px solid #F90A0A");
-               error_retype_password = true;
-            } else {
-               $("#retype_password_error_message").hide();
-               $("#form_retype_password").css("border-bottom","2px solid #34F458");
-            }
-         }
+         <footer class="page-footer font-medium white pt-4">
+            <div class="container-fluid text-center text-md-left">
+               <div class="row">
+                  <div class="col-md-6 mt-md-0 mt-3">
+                     <h5 class="text-uppercase">About</h5>
+                     <p>Web platform mini-game for the classic old game "Pacman" for all ages.</p>
+                  </div>
+                  <div class="col-md-3 mb-md-0 mb-3">
+                     <h5 class="text-uppercase">Contact Us</h5>
+                     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+                        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+                        crossorigin="anonymous">
+                     <script src="https://code.jquery.com/jquery-3.3.1.js"
+                        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+                        </script>
+                     <ul class="google_contact_button">
+                        <li> <a target="_blank"
+                              href="https://mail.google.com/mail/?view=cm&fs=1&to=ohadnav@post.bgu.ac.il"><i
+                                 class="fab fa-google icon"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="footer-copyright text-center grey py-3">© 2020 Copyright:
+               <a href=""> Ohad Nave & Gal Atedgi </a>
+            </div>
 
-         function check_email() {
-            var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; //valid e-mail pattern.
-            var email = $("#form_email").val();
-            if (pattern.test(email) && email !== '') {
-               $("#email_error_message").hide();
-               $("#form_email").css("border-bottom","2px solid #34F458");
-            } else {
-               $("#email_error_message").html("Invalid Email pattern");
-               $("#email_error_message").show();
-               $("#form_email").css("border-bottom","2px solid #F90A0A");
-               error_email = true;
-            }
-         }
+         </footer>
+         <script>
 
-         $("#registration_form").submit(function() {
-            error_fname = false;
-            error_sname = false;
-            error_email = false;
-            error_password = false;
-            error_retype_password = false;
+            $(function () {
+               $("#dialog").dialog("open");
+            });
 
-            check_username();
-            check_sname();
-            check_email();
-            check_password();
-            check_retype_password();
 
-            if (error_fname === false && error_sname === false && error_email === false && error_password === false && error_retype_password === false) {
-               alert("Registration Successfull");
-               return true;
-            } else {
-               alert("Please Fill the form Correctly");
+            $("#game_settings_form").submit(function (e) {
+               $("#newGameButton").show();
                return false;
-            }
-         });
-      });
+            });
 
-	 	
-		</script>
-	</body>
+            function showWelcomePage() {
+               $("#welcomeLogoPicture").show();
+               $("#RegisterSection").hide();
+               $("#LoginSection").hide();
+               $("#GameSection").hide();
+               $("#home_button").hide();
+               $("#about_button").hide();
+            }
+
+            function showRegisterSection() {
+               $("#home_button").show();
+               $("#welcomeLogoPicture").hide();
+               $("#RegisterSection").show();
+               $("#LoginSection").hide();
+               validateCardentials();
+               $("#registerButton").hide();
+               $("#goBackButton").show();
+            }
+
+            function showLoginSection() {
+               $("#home_button").show();
+               $("#welcomeLogoPicture").hide();
+               $("#LoginSection").show();
+               $("#RegisterSection").hide();
+               $("#goBackButton").show();
+               
+            }
+
+
+            function showGameGrid() {
+               $("#welcomeLogoPicture").hide();
+               $("#gameGrid").show();
+               $("#gameDetails").show();
+               $("#LoginSection").hide();
+               updateUserSettings();
+            }
+
+            function showGameSettings() {
+               $("#gameSettings").show();
+            }
+
+            function renewGame() {
+               music.pause();
+               window.clearInterval(interval);
+               window.clearInterval(monsterInterval);
+               window.clearInterval(scorInterval);
+               window.clearInterval(medInterval);
+               window.clearInterval(mashroomInterval);
+               updateMonsterInCorners();
+               Start();
+            }
+
+            function setRandomSettings() {
+               $("#choose4Up").prop('disabled', true);
+               $("#choose4Down").prop('disabled', true);
+               $("#choose4Left").prop('disabled', true);
+               $("#choose4Right").prop('disabled', true);
+               document.getElementById("point5_color").value = getRandomColor();
+               document.getElementById("point15_color").value = getRandomColor();
+               document.getElementById("point25_color").value = getRandomColor();
+               document.getElementById("ballsNumber_output").value = randomIntFromInterval(50, 90);
+               document.getElementById("game_time_output").value = randomIntFromInterval(60, 180);
+               document.getElementById("monster_number_output").value = randomIntFromInterval(1, 4);
+            }
+
+
+            function loginSuccessfully() {
+               $("#LoginSection").hide();
+               $("#about_button").show();
+               showGameSettings();
+            }
+
+
+            function getRandomColor() {
+               var letters = '0123456789ABCDEF';
+               var color = '#';
+               for (var i = 0; i < 6; i++) {
+                  color += letters[Math.floor(Math.random() * 16)];
+               }
+               return color;
+            }
+
+            function randomIntFromInterval(min, max) { // min and max included 
+               return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+
+
+         </script>
+</body>
+
 </html>

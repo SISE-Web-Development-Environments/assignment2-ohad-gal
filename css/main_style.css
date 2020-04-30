@@ -1,0 +1,23 @@
+body
+{
+	background-image: url("../clean_back2.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family: monospace;
+}
+
+.welcome_logo_pic{
+		text-align:center;	
+}
+
+
+#welcomeLogoPicture{
+	width: 100px;
+	height: 100px;
+  	position: absolute;
+  	top: 30%;
+  	left: 35%;
+  	transform: translate(-50%, -50%);
+}

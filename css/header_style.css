@@ -1,0 +1,27 @@
+
+  .header a {
+	float: left;
+	color: #000;
+	margin: 5px;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 18px; 
+	line-height: 25px;
+	border-radius: 4px;
+  }
+  
+  .header{
+	  overflow: hidden;
+	background-color:transparent;
+	padding: 10px 10px;
+  }
+
+
+	#company_logo{
+		height: 200px; 
+		width: 250px; 
+	}
+
+	#emblem{
+		height: 45px; 
+	}

@@ -1,0 +1,93 @@
+footer{
+	background: #F0F8FF;
+	position: fixed;
+   width:100%;
+   height:180px; 
+   margin-bottom: 0.5%; 
+}
+
+.google_contact_button{
+	position: relative;
+}
+
+#aboutSite{
+	margin-top: 25px;
+	margin-left: 25px;
+	font-size: 15px;
+}
+
+p, h5{
+	font-family: Calibri;
+	color: rgb(66,133,244);
+}
+
+a{
+	color: rgb(66,133,244);
+}
+
+ul {
+	display: flex;
+	position: fixed;
+	bottom: 1%;
+	right: 5%;
+  }
+  
+  ul li {
+	list-style: none;
+  }
+  
+  ul li a {
+	width: 50px;
+	height: 50px;
+	background-color: #fff;
+	text-align: center;
+	line-height: 45px;
+	font-size: 20px;
+	margin: 0 10px;
+	display: block;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+	border: 3px solid #fff;
+	z-index: 1;
+  }
+  
+  ul li a .icon {
+	position: relative;
+	color: #262626;
+	transition: .5s;
+	z-index: 3;
+  }
+  
+  ul li a:hover .icon {
+	color: #fff;
+	transform: rotateY(360deg);
+  }
+  
+  ul li a:before {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #f00;
+	transition: .5s;
+	z-index: 2;
+  }
+  
+  ul li a:hover:before {
+	top: 0;
+  }
+  
+  ul li:nth-child(1) a:before{
+	background: #4387f5;;
+  }
+/*   
+  ul li:nth-child(2) a:before{
+	background: #dd4b39;
+  }
+  
+  ul li:nth-child(3) a:before {
+	background: #E73895;
+  } */

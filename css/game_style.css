@@ -1,0 +1,138 @@
+
+#GameSection{
+       margin-bottom: 20px;
+       margin-right: 50px;
+}
+
+
+h1{
+    font-family: Calibri;
+    font-size: 15px;
+    color: rgb(66,133,244);
+    border-bottom: 1px solid rgb(66,133,244);
+    border-bottom-width: 3px;
+}
+
+
+
+#gameDetails {
+        background-color:white;
+        font-size: 15px;
+        border-radius:5px;
+        position: absolute;
+        top: 30%;
+        right: 15%;
+        height:300px;
+        padding: 30px;
+        font: Calibri bold 18px/30px Georgia, serif;
+        width: 300px;  
+        padding-bottom: 10px;
+
+}
+
+
+#game_details_form{
+    font-size: 20px;
+}
+
+#gameSettings
+{
+    background-color:white;
+    border-radius:10px;
+    position: absolute;
+    left: 1%;
+    width: 650px;
+    height:920px;
+    padding: 15px 15px;
+    font: Calibri bold 18px/30px Georgia, serif;
+    margin-bottom:5px;
+}
+
+
+#gameSettings input
+{	
+	padding: 5px;
+	margin-bottom: 30px;
+	width: 80%;
+	box-sizing: border-box;
+	border-bottom: 2px solid lightskyblue;
+}
+
+
+#gameSettings input[type="submit"]
+{
+	border-radius: 25px;
+	font-size: 20px;
+	height: 40px;
+	cursor : pointer;
+	background: rgb(66,133,244);
+    color: #fff;
+    width: 20%;
+	
+}
+
+#gameGrid{
+    background-color:white;
+    border:2px solid rgb(66,133,244);
+    border-radius:15px;
+    padding: 20px;
+    position: absolute;
+	top: 20%;
+    left: 35%;
+
+}
+
+
+.arrow_pics{
+    height: 50px;
+    vertical-align: middle;
+}
+
+#game_moving_keys input
+{	
+    margin-right: 5px;
+	width: 5%;
+	box-sizing: border-box;
+	border: 2px solid lightskyblue;
+}
+
+#game_details_form input
+{	
+    margin-right: 5px;
+	width: 55%;
+	box-sizing: border-box;
+	border: 2px solid lightskyblue;
+}
+
+
+.monster_num_settings,
+.balls_num_settings,
+.game_time_settings{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 50%;
+  }
+
+
+output{
+    color: rgb(66,133,244);
+}
+
+#balls_color_settings input{
+    height: 20%;
+}
+
+
+#balls_color_settings {
+    display: flex;
+}
+
+label {
+    float: left;
+    color: rgb(66,133,244);
+    clear: both;
+}
+
+#point5_color input{
+    width: 100%;
+}
