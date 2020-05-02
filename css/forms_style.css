@@ -8,7 +8,12 @@ h2{
 
 #RegisterSection
 {
-height: 450px;
+height: 460px;
+}
+
+#LoginSection
+{
+height: 200px;
 }
 
 #RegisterSection,#LoginSection

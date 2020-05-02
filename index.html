@@ -18,7 +18,7 @@
    <script src="./jquery-3.4.1.slim.min.js"></script>
 
 
-  
+
 
 
    <!-- registration scripts ) -->
@@ -32,11 +32,11 @@
    <!-- Material Design Bootstrap -->
    <link rel="stylesheet" href="css/mdb.min.css">
 
-    <!-- Modal box plugin ) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
- 
+   <!-- Modal box plugin ) -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 </head>
 
 <body>
@@ -68,7 +68,7 @@
             <!-- <a class="Buttons" id="gameButton" onclick="showGameGrid()" style="display: none;">show</a> -->
             <a class="Buttons" id="newGameButton" onclick="renewGame()" style="display: none;">new game</a>
             <a class="Buttons" id="about_button" href="#modalBox2" rel="modal:open" style="display: none;">About</a>
-            <a class="Buttons" onclick="showGameSettings()" style="display: none;" >Game Settings</a>
+            <a class="Buttons" onclick="showGameSettings()" style="display: none;">Game Settings</a>
             <div id="modalBox2" class="modal">
                <p>Web page developers:</p>
                <p> Ohad Nave 307896837</p>
@@ -210,38 +210,42 @@
                   </div>
 
 
-                  <div id="balls_color_settings">
+                  <div class="balls_color_settings">
                      <div>
-                        <label>5 point balls</label>
-                        <input type="color" id="point5_color" name="favcolor" value="#ff0000" />
-                        <br>
-                        <label style="display: inline-block;">15 point balls</label>
-                        <input type="color" id="point15_color" name="favcolor" value="#8A2BE2" />
-                        <br>
-                        <label style="display: inline-block;">25 point balls</label>
-                        <input type="color" id="point25_color" name="favcolor" value="#00ff00" />
-                        <br>
+                        <label>5 Points Color
+                        <input type="color" id="point5_color" value="#6699FF" /></label>
+
+                        <label>15 Points Color 
+                        <input type="color" id="point15_color"  value="#6699FF" /></label>
+
+                        <label>25 Points Color
+                        <input type="color" id="point25_color" value="#6699FF" /></label>
+
                      </div>
                   </div>
-
-                  <br>
-                  <br>
                   <div class="game_time_settings">
-                     <label class="lvlTimeChoose" for="name" style="display: inline-block;">game time(sec)</label>
+                     <label class="lvlTimeChoose" for="name" style="display: inline-block;">Game Time(sec)</label>
                      <input type="range" id="game_time" name="name" min=60 max=180
                         oninput="game_time_output.value = game_time.value" />
                      <output id="game_time_output">60</output>
+                     <output id="letters_show" oninput=""> </output>
                   </div>
 
                   <div class="monster_num_settings">
-                     <label class="lblMonNum" for="name" style="display: inline-block;">Monster number</label>
+                     <label class="lblMonNum" for="name" style="display: inline-block;">Monster Number</label>
                      <input type="range" id="monsterNumber" name="name" min="1" max="4"
                         oninput="monster_number_output.value = monsterNumber.value" />
                      <output id="monster_number_output">4</output>
                   </div>
-
+                  
                   <input type="submit" onclick="showGameGrid()" value="Save&Start" name="">
                   <input type="submit" value="Set Random" onclick="setRandomSettings()">
+                  <label>
+                     Random option sets the arrow keys for moving pacman.
+                  </label>
+                  <label>
+                     All the rest settings are randomly chosen.
+                  </label>
                </form>
             </div>
             <div id="gameGrid" style="display: none;">
@@ -250,29 +254,6 @@
                </div>
             </div>
          </div>
-
-         <!-- <div class="footer">
-         <div class="footer-content">
-            <div id="aboutSite">
-               <h3>About</h3>
-               <p>Web platform mini-game for the classic old game "Pacman" for all ages.</p>
-               <p>The site was designed and built by Ohad Nave & Gal Atedgi.</p>
-               <h3>Contact Us</h3>
-            </div>
-            <div class="foot-sction links"></div>
-            <div class="foot-sction contact">
-               <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-                  integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-                  crossorigin="anonymous">
-               <script src="https://code.jquery.com/jquery-3.3.1.js"
-                  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
-                  </script>
-               <ul>
-                  <li> <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=ohadnav@post.bgu.ac.il"><i class="fab fa-google icon"></i></a></li>
-               </ul>
-            </div>
-         </div>
-      </div> -->
 
          <footer class="page-footer font-medium white pt-4">
             <div class="container-fluid text-center text-md-left">
@@ -303,7 +284,6 @@
 
          </footer>
          <script>
-
             $(function () {
                $("#dialog").dialog("open");
             });
@@ -339,7 +319,7 @@
                $("#LoginSection").show();
                $("#RegisterSection").hide();
                $("#goBackButton").show();
-               
+
             }
 
 
