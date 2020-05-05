@@ -279,11 +279,6 @@
 
          </footer>
          <script>
-            $(function () {
-               $("#dialog").dialog("open");
-            });
-
-
             $("#game_settings_form").submit(function (e) {
                $("#newGameButton").show();
                return false;
@@ -303,7 +298,6 @@
                $("#welcomeLogoPicture").hide();
                $("#RegisterSection").show();
                $("#LoginSection").hide();
-               validateCardentials();
                $("#registerButton").hide();
                $("#goBackButton").show();
             }

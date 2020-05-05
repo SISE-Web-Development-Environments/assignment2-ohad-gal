@@ -1,8 +1,9 @@
-var users = new Array();
+var users_array = new Array();
+
 
 function checkIfExist(username){
-   for(var i=0; i<users.length; i=i+2){
-      if (users[i] == username.value){
+   for(var i=0; i<users_array.length; i=i+2){
+      if (users_array[i] == username.value){
          return false;
       }
    }
@@ -10,8 +11,8 @@ function checkIfExist(username){
 }
 
 function checkLogin(username,password){
-   for(var i=0; i<users.length; i=i+2){
-      if (users[i] == username.value && users[i+1] == password.value){
+   for(var i=0; i<users_array.length; i=i+2){
+      if (users_array[i] == username.value && users_array[i+1] == password.value){
          return true;
       }
    }
@@ -21,9 +22,8 @@ function checkLogin(username,password){
 $(function () {
 
    var p = 'p';
-   users.push(p);
-   users.push(p);
-   //localStorage.setItem('p', 'p');
+   users_array.push(p);
+   users_array.push(p);
     $("#username_error_message").hide();
     $("#fullname_error_message").hide();
     $("#password_error_message").hide();
@@ -161,10 +161,10 @@ $(function () {
           var username = document.getElementById("form_username");
           var pass = document.getElementById("form_password");
           if (checkIfExist(username)) {
-            users.push(username.value);
-            users.push(pass.value);
+            users_array.push(username.value);
+            users_array.push(pass.value);
             alert("Registration Successfull!");
-            return true;
+            return false;
           }
           else {
              alert("User Name is already exist");
